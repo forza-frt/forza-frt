@@ -1,0 +1,19 @@
+{
+  "_comment": "TEST FIXTURE ONLY — used by scripts/e2e.mjs to stand in for the Overpass API in an offline test environment. Not shipped, not real camera data.",
+  "cameras": {
+    "elements": [
+      { "type": "node", "id": 9000001, "lat": 56.9520, "lon": 24.1200, "tags": { "highway": "speed_camera" } },
+      { "type": "node", "id": 9000002, "lat": 56.9300, "lon": 24.1200, "tags": { "highway": "speed_camera", "maxspeed": "50", "direction": "N" } },
+      { "type": "way", "id": 8000001, "tags": { "highway": "primary", "name": "Testa iela", "maxspeed": "50" },
+        "geometry": [ { "lat": 56.92, "lon": 24.12 }, { "lat": 56.96, "lon": 24.12 } ] }
+    ]
+  },
+  "roads": {
+    "elements": [
+      { "type": "way", "id": 8000001, "tags": { "highway": "primary", "name": "Testa iela", "maxspeed": "50" },
+        "geometry": [ { "lat": 56.92, "lon": 24.12 }, { "lat": 56.96, "lon": 24.12 } ] },
+      { "type": "way", "id": 8000002, "tags": { "highway": "residential", "name": "Bez datiem iela" },
+        "geometry": [ { "lat": 56.945, "lon": 24.11 }, { "lat": 56.945, "lon": 24.13 } ] }
+    ]
+  }
+}
