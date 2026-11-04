@@ -1,0 +1,152 @@
+@import 'tailwindcss';
+
+@utility pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+@utility pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom), 8px);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #0b0f14;
+  color: #fff;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+}
+body {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+.leaflet-container {
+  background: #0b0f14;
+  font: inherit;
+}
+.leaflet-control-attribution {
+  background: rgba(11, 15, 20, 0.6) !important;
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-size: 9px !important;
+}
+.leaflet-control-attribution a {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.leaflet-bottom.leaflet-right {
+  bottom: auto;
+  top: calc(env(safe-area-inset-top) + 64px);
+}
+
+/* Camera markers */
+.rm-cam {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.15s;
+}
+.rm-cam--fixed {
+  background: #dc2626;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.rm-cam--average_speed {
+  background: #7c3aed;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.rm-cam--unknown {
+  background: #475569;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.rm-cam--mobile_zone {
+  background: rgba(245, 158, 11, 0.18);
+  color: #fbbf24;
+  border: 2px dashed #f59e0b;
+  box-shadow: none;
+}
+.rm-cam--hl {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.6), 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+.rm-cam-badge {
+  position: absolute;
+  right: -10px;
+  top: -9px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 2px;
+  box-sizing: border-box;
+  border-radius: 11px;
+  background: #fff;
+  color: #000;
+  border: 2.5px solid #dc2626;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 17px;
+  text-align: center;
+}
+
+/* User position */
+.rm-me {
+  width: 18px;
+  height: 18px;
+  margin: 6px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 3px solid #fff;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.25);
+}
+.rm-me--dir {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+  transition: transform 0.4s ease-out;
+}
+
+/* iOS-style switch */
+.rm-switch {
+  appearance: none;
+  -webkit-appearance: none;
+  flex-shrink: 0;
+  width: 51px;
+  height: 31px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  position: relative;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.rm-switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s;
+}
+.rm-switch:checked {
+  background: #22c55e;
+}
+.rm-switch:checked::after {
+  transform: translateX(20px);
+}
